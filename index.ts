@@ -1,12 +1,8 @@
-import { initTRPC } from "@trpc/server";
-const t = initTRPC.create();
-
 import { createHTTPHandler } from "@trpc/server/adapters/standalone";
 import http from "http";
-import { testRouter } from "./routes/test";
 
-export const publicProcedure = t.procedure;
-export const router = t.router;
+import { testRouter } from "./routes/test";
+import { publicProcedure, router } from "./trpc";
 
 // const testRouter = router({
 //   hello: publicProcedure.query(() => {
